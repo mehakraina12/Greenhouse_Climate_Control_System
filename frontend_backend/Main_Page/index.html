@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+<body>
+    
+    <div class="header--items">
+        <img src="moon.png" id="icon">
+    </div>
+    
+
+<div class="container" >
+
+    <div class="container-heading">
+        <h1>Greenhouse Climate Control System</h1>
+    </div>
+    <div class="box-container">
+
+        <div class="box">
+            <img src="icon-2.png" alt="">
+            <h3>Device 1</h3>
+            <p>Effortlessly adjust greenhouse temperature from device placed near Main Gate-1</p>
+            
+            <br>
+            <a href="../Admin_Login_Page/index.php" class="btn" >Temperature</a>
+        </div>
+
+        <div class="box">
+            <img src="icon-2.png" alt="">
+            <h3>Device 2</h3>
+            <p>Effortlessly adjust greenhouse temperature from device placed near Main Gate-2</p>
+            <br>
+            <a href="#" class="btn">Temperature</a>
+        </div>
+
+        <div class="box">
+            <img src="icon-2.png" alt="">
+            <h3>Device 3</h3>
+            <p>Effortlessly adjust greenhouse temperature from device placed near Main Gate-3</p>
+            <br>
+            <a href="#" class="btn">Temperature</a>
+        </div>
+
+        <div class="box">
+            <img src="icon-2.png" alt="">
+            <h3>Device 4</h3>
+            <p>Effortlessly adjust greenhouse temperature from device placed near Main Gate-4</p>
+            <br>
+            <a href="#" class="btn">Temperature</a>
+        </div>
+
+        <div class="box">
+            <img src="icon-5.png" alt="">
+            <h3>Device 5</h3>
+            <p>Effortlessly adjust greenhouse humidity from device placed near Main Gate-1</p>
+            <br>
+            <a href="#" class="btn">Humidity</a>
+        </div>
+
+        <div class="box">
+            <img src="icon-5.png" alt="">
+            <h3>Device 6</h3>
+            <p>Effortlessly adjust greenhouse humidity from device placed near Main Gate-2</p>
+            <br>
+            <a href="#" class="btn">Humidity</a>
+        </div>
+
+        <div class="box">
+            <img src="icon-6.png" alt="">
+            <h3>Device 7</h3>
+            <p>control sprinkler-1</p>
+            <br>
+            <br>
+            <br>
+            <a href="#" class="btn">Sprinkler</a>
+            
+        </div>
+
+        <div class="box">
+            <img src="icon-6.png" alt="">
+            <h3>Device 8</h3>
+            <p>control sprinkler-2</p>
+            <br>
+            <br>
+            <br>
+            <a href="#" class="btn">Sprinkler</a>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- Admin button -->
+<a href="../Admin_Login_Page/index.php" class="admin-button">
+    <img src="admin-icon.png" alt="Admin">
+</a>
+<script>
+    var icon=document.getElementById("icon");
+    icon.onclick=function(){
+        document.body.classList.toggle("dark--theme");
+        if(document.body.classList.contains("dark--theme")){
+            icon.src="sun.png";
+        }
+        else{
+            icon.src="moon.png";
+        }
+    }
+</script>
+</div>
+</body>
+</html>

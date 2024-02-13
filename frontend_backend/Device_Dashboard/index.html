@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        // Function to set the theme class on the body element
+        function setTheme(theme) {
+            document.body.classList.remove('light', 'dark');
+            document.body.classList.add(theme);
+        }
+    
+        // Function to toggle between dark and light mode
+        function toggleTheme() {
+            if (document.body.classList.contains('dark')) {
+                setTheme('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                setTheme('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+    
+        // Event listener for the theme toggle button
+        const themeToggleButton = document.querySelector('.dark--theme--btn');
+        themeToggleButton.addEventListener('click', toggleTheme);
+    
+        // Retrieve the saved theme from localStorage
+        const savedTheme = localStorage.getItem('theme');
+    
+        // Set the theme based on the saved value or default to dark mode
+        const theme = savedTheme || 'dark';
+        setTheme(theme);
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchTemperatureData();
+        });
+    </script>
+    
+    
+      
+      
+    <title>Dashboard</title>
+</head>
+<body class="body">
+    <section class="header">
+        <div class="logo">
+          <i class="ri-menu-line menu" id="menuIcon"></i>
+          <h2><span>Temperature</span></h2>
+        </div>
+        <h1 class="header--heading">DASHBOARD</h1>
+        <div class="header--items">
+          <div class="dark--theme--btn">
+            <i class="ri-moon-line moon" style="font-size: 22px;"></i>
+            <i class="ri-sun-line sun" style="font-size: 22px;"></i>
+          </div>
+          <div class="profile">
+            <a href="../Main_Page/index.html">
+              <img src="home.png" alt="">
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      
+          
+
+    <script>
+        function updateTemperature() {
+            var newTemperatureInput = document.getElementById("newTemperature");
+    
+            // Save the temperature value in localStorage
+            localStorage.setItem("temperature", newTemperatureInput.value);
+    
+            // Clear the input value
+            newTemperatureInput.value = "";
+        }
+    
+        function viewTemperatureHistory() {
+            // Add code for viewing temperature history here
+        }
+    </script>
+    <section class="main">
+        <div class="sidebar" style="margin-top: 10px;">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="#" class="active">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 1</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 2</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 3</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 4</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 5</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 6</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 7</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 8</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 9</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="ri-sensor-line"></i></span>
+                        <div class="sidebar--item">Device 10</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--items">
+                <li class="logout-item">
+                    <a href="../Admin_Login_Page/index.php">
+                        <span class="icon"><i class="ri-logout-box-line"></i></span>
+                        <div class="sidebar--item logout-option">Logout</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--container">
+            <div class="section--title">
+                <h3 class="title">Device 1 Details</h3>
+            </div>
+            <div class="cards">
+                <div class="card card-1">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-temperature-fill"></i></span>
+                        <span style="text-align: center; font-weight: 1000;">Date &amp; Time</span>
+                    </div>
+                    <h3 class="card--value" style="text-align: center;"><span id="time"></span></h3>
+
+                    <div class="chart">
+                        <canvas id="sales"></canvas>
+                    </div>
+                    <button class="refresh-button" onclick="window.location.reload()">Refresh</button>
+                </div>
+
+                <div class="card card-2">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-temperature-fill"></i></span>
+                        <span>Temperature</span>
+                    </div>
+                    <h3 class="card--value" id="temperatureValue"></h3>
+                    <input type="number" id="input_value" placeholder="Value">
+                    <button class="update-button" onclick="insertData()">Update</button>
+                    <button class="history-button" onclick="openHistoryPage()">History</button>
+                </div>  
+                     
+                
+                <div class="card card-3">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-temperature-fill"></i></span>
+                        <span>Humidity</span>
+                    </div>
+                    <h3 class="card--value">80%</h3>
+                    <div class="chart">
+                        <canvas id="products"></canvas>
+                    </div>
+                </div>
+                <div class="card card-4">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-temperature-fill"></i></span>
+                        <span>Wind Speed</span>
+                    </div>
+                    <h3 class="card--value">6 mi/h</h3>
+                    <div class="chart">
+                        <canvas id="customers"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="target-vs-sales--container">
+                <div class="section--title">
+                    <h3 class="title">Weather </h3>
+                    <div class="sales--value">
+                        <div class="target">
+                            <i class="ri-checkbox-blank-circle-fill circle"></i>
+                            Temperature <span>&nbsp; </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart chart-container">
+                    <canvas id="temperatureHistoryChart"></canvas>
+                </div>                
+            </div>
+
+        </div>
+    </section>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          fetchTemperatureData();
+        });
+      </script>
+    <script>
+        function openHistoryPage() {
+            window.open("../device/index.php", "_blank");
+        }        
+    </script>
+
+</body>
+</html>
